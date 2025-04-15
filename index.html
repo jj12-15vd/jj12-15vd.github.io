@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jj12-15vd | Portfolio</title>
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #111111;
+        --accent-color: #0077ff;
+      }
+      [data-theme="dark"] {
+        --bg-color: #121212;
+        --text-color: #f0f0f0;
+        --accent-color: #00aaff;
+      }
+      body {
+        font-family: sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: var(--accent-color);
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      section {
+        max-width: 800px;
+        margin: auto;
+        padding: 2rem 1rem;
+      }
+      .project {
+        border: 1px solid var(--accent-color);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+      }
+      .project a {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        color: gray;
+      }
+      .theme-toggle {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        background: none;
+        border: 1px solid white;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Jeremy Vince Dequina</h1>
+      <p>Computer Science Student | Aspiring Developer | Project Showcase</p>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </header>
+
+    <nav>
+      <a href="https://github.com/jj12-15vd" target="_blank">GitHub</a>
+    </nav>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Rock-Paper-Scissors</h3>
+        <p>A Rock, Paper, Scissors game made using HTML, CSS, and JS.</p>
+        <a
+          href="https://github.com/jj12-15vd/top-projects/tree/main/rock-paper-scissors"
+          target="_blank"
+          >View on GitHub</a
+        >
+      </div>
+      <div class="project">
+        <h3>Etch A Sketch</h3>
+        <p>
+          A Dynamic Sketch Pad that draws using randomly generated colors.
+          Created using HTML, CSS, and JS.
+        </p>
+        <a
+          href="https://github.com/jj12-15vd/top-projects/tree/main/etch-a-sketch"
+          target="_blank"
+          >View on GitHub</a
+        >
+      </div>
+      <!-- Add more projects here -->
+    </section>
+
+    <footer>&copy; 2025 Your Name. Built with HTML & CSS.</footer>
+
+    <script>
+      function toggleTheme() {
+        document.documentElement.setAttribute(
+          "data-theme",
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark"
+        );
+      }
+    </script>
+  </body>
+</html>
