@@ -3,118 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jj12-15vd | Portfolio</title>
-    <style>
-      :root {
-        --bg-color: #ffffff;
-        --text-color: #111111;
-        --accent-color: #0077ff;
-      }
-      [data-theme="dark"] {
-        --bg-color: #121212;
-        --text-color: #f0f0f0;
-        --accent-color: #00aaff;
-      }
-      body {
-        font-family: sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background-color: var(--accent-color);
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-      section {
-        max-width: 800px;
-        margin: auto;
-        padding: 2rem 1rem;
-      }
-      .project {
-        border: 1px solid var(--accent-color);
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border-radius: 8px;
-      }
-      .project a {
-        color: var(--accent-color);
-        text-decoration: none;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem;
-        color: gray;
-      }
-      .theme-toggle {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-        background: none;
-        border: 1px solid white;
-        color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 4px;
-      }
-    </style>
+    <meta name="description" content="Jeremy Vince Dequina's portfolio of web projects and experiments." />
+    <meta name="theme-color" content="#f7f8fa" />
+    <title>Jeremy Vince Dequina | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Jeremy Vince Dequina</h1>
-      <p>Computer Science Student | Aspiring Developer | Project Showcase</p>
-      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-    </header>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Jeremy Vince Dequina, back to top">
+          <span class="brand-mark" aria-hidden="true">JV</span>
+          <span>Jeremy Vince Dequiña</span>
+        </a>
+        <nav class="header-actions" aria-label="Main navigation">
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="https://github.com/jj12-15vd" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <button class="theme-toggle" id="theme-toggle" type="button">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+            <span id="theme-label">Dark mode</span>
+          </button>
+        </nav>
+      </header>
 
-    <nav>
-      <a href="https://github.com/jj12-15vd" target="_blank">GitHub</a>
-    </nav>
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Portfolio / 2026</p>
+          <h1 id="hero-title">Hi, I’m Jeremy Vince Dequiña.<br /><span>I build APIs and the systems behind them.</span></h1>
+          <p class="hero-copy">
+            I’m a computer science student and aspiring developer. Here are a few
+            projects I’ve built while learning, experimenting, and solving problems.
+          </p>
+          <a class="primary-link" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+        </section>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Rock-Paper-Scissors</h3>
-        <p>A Rock, Paper, Scissors game made using HTML, CSS, and JS.</p>
-        <a
-          href="https://github.com/jj12-15vd/top-projects/tree/main/rock-paper-scissors"
-          target="_blank"
-          >View on GitHub</a
-        >
+        <section class="projects-section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2 id="projects-title">Projects<span class="heading-period">.</span></h2>
+            </div>
+            <p>Choose a project to learn more.</p>
+          </div>
+          <div class="project-grid" id="project-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© <span id="current-year">2026</span> Jeremy Vince Dequina</span>
+        <a href="https://github.com/jj12-15vd" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+      <div class="dialog-content">
+        <div class="dialog-topline">
+          <span class="eyebrow">Project details</span>
+          <button class="dialog-close" id="dialog-close" type="button" aria-label="Close project details">×</button>
+        </div>
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-description" id="dialog-description"></p>
+        <div class="dialog-stack" id="dialog-stack" aria-label="Technologies used"></div>
+        <div class="dialog-links" id="dialog-links"></div>
       </div>
-      <div class="project">
-        <h3>Etch A Sketch</h3>
-        <p>
-          A Dynamic Sketch Pad that draws using randomly generated colors.
-          Created using HTML, CSS, and JS.
-        </p>
-        <a
-          href="https://github.com/jj12-15vd/top-projects/tree/main/etch-a-sketch"
-          target="_blank"
-          >View on GitHub</a
-        >
-      </div>
-      <!-- Add more projects here -->
-    </section>
-
-    <footer>&copy; 2025 Jeremy Vince Dequina. Built with HTML & CSS.</footer>
-
-    <script>
-      function toggleTheme() {
-        document.documentElement.setAttribute(
-          "data-theme",
-          document.documentElement.getAttribute("data-theme") === "dark"
-            ? "light"
-            : "dark"
-        );
-      }
-    </script>
+    </dialog>
   </body>
 </html>
